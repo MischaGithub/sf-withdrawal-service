@@ -23,3 +23,19 @@ sns_client = boto3.client(
 
 # Get the SNS topic ARN from env
 SNS_TOPIC_ARN = os.getenv("SNS_TOPIC_ARN")
+
+
+# A class to represent the withdrawal event
+class WithdrawalEvent:
+    def __init__(self, amount, account_id, status):
+        self.amount = amount
+        self.account_id = account_id
+        self.status = status
+
+    def to_dict(self):
+        # Needed to serialize the object for logging or publishing
+        return {
+            "amount": str(self.amount),
+            "account_id": str(self.account_id),
+            "status": self.status
+        }
