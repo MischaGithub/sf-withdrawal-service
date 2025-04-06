@@ -39,3 +39,20 @@ class WithdrawalEvent:
             "account_id": str(self.account_id),
             "status": self.status
         }
+
+@app.route("/withdraw", methods=["POST"])
+def withdraw():
+    try:
+        data = request.get_json()
+
+        # Basic input check
+        if not data or "amount" not in data or "account_id" not in data:
+            return jsonify({"error": "Missing account_id or amount"}), 400
+
+        amount = Decimal(str(data["amount"]))
+        account_id = data["account_id"]
+
+    except Exception as e:
+        # Log any unexpected error
+        print("Exception:", str(e))
+        return jsonify({"error": str(e)}), 500
