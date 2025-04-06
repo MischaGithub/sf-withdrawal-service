@@ -56,3 +56,15 @@ def withdraw():
         # Log any unexpected error
         print("Exception:", str(e))
         return jsonify({"error": str(e)}), 500
+    
+
+# Optional route to verify app is running
+@app.route("/", methods=["GET"])
+def health_check():
+    return "✅ App is up", 200
+
+
+# Run the Flask app locally
+if __name__ == "__main__":
+    # In production, debug should be turned off
+    app.run(debug=True)
