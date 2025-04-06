@@ -30,9 +30,4 @@ This solution focuses on:
 - Keeping logic easy to read and follow
 - Using good practices like environment configs and exception handling
 
-If this app were to be used in production, I would suggest:
-- Adding authentication (like an API key or token)
-- Using a real database for account management and transactions
-- Adding unit tests
-
 Thanks for the opportunity to work on this. I kept it clean and focused on what matters most: clarity, correctness, and simplicity.

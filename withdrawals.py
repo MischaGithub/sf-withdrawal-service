@@ -65,7 +65,7 @@ def withdraw():
                 )
             except Exception as sns_err:
                 # Log but don't fail if SNS publish doesn't work
-                print("⚠️ Warning: Failed to publish to SNS", sns_err)
+                print("Warning: Failed to publish to SNS", sns_err)
 
 
         return jsonify({
@@ -75,7 +75,7 @@ def withdraw():
         })
 
     except Exception as e:
-        print("❌ Exception:", str(e))
+        print("Exception:", str(e))
         return jsonify({"error": str(e)}), 500
 
 
