@@ -18,12 +18,12 @@
 6. **SNS Event Publishing (Optional but Present)**
    I included logic to publish a withdrawal event to AWS SNS if the `SNS_TOPIC_ARN` is configured. It’s done safely, so if credentials are wrong or missing, the app still works — it just logs a warning.
 
-## 🧪 Input Validations
+## Input Validations
 
 - I made sure both `account_id` and `amount` are present before trying to process a withdrawal.
 - I also validated the amount format using Python’s `Decimal` class to avoid float precision issues.
 
-## ✅ Final Notes
+## Final Notes
 
 This solution focuses on:
 - Delivering a working API endpoint with proper input validation and event publishing

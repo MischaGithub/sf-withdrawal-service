@@ -1,10 +1,10 @@
-# 💸 Withdrawals Microservice (Flask + AWS SNS)
+# Withdrawals Microservice (Flask + AWS SNS)
 
 This is a simple Flask-based withdrawals microservice that simulates bank account deductions and publishes a withdrawal event to an AWS SNS topic. It's intended as part of a take-home technical assessment.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Accepts `POST /withdraw` requests with account ID and amount
 - Validates the request and simulates balance checks
@@ -14,7 +14,7 @@ This is a simple Flask-based withdrawals microservice that simulates bank accoun
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python 3.9+
 - Flask
@@ -23,7 +23,7 @@ This is a simple Flask-based withdrawals microservice that simulates bank accoun
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
@@ -35,11 +35,11 @@ This is a simple Flask-based withdrawals microservice that simulates bank accoun
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 Follow these steps to get the app running locally. This guide assumes **no prior experience** with Python or Flask.
 
-### 1. 🔁 Clone the repo
+### 1. Clone the repo
 
 ```bash
 git clone https://github.com/MischaGithub/sf-withdrawal-service.git
@@ -48,7 +48,7 @@ cd sf-withdrawal-service
 
 ---
 
-### 2. 🐍 Create a virtual environment (recommended)
+### 2. Create a virtual environment (recommended)
 
 ```bash
 # Create environment (only once)
@@ -64,7 +64,7 @@ venv\Scripts\activate
 
 ---
 
-### 3. 📦 Install dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 
 ---
 
-### 4. 🔐 Set up environment variables
+### 4. Set up environment variables
 
 Create a copy of the example env file:
 
@@ -94,7 +94,7 @@ FLASK_DEBUG=true
 
 ---
 
-### 5. ▶️ Run the app
+### 5. Run the app
 
 ```bash
 python withdrawals.py
@@ -104,7 +104,7 @@ By default, it runs at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 🧪 How to Test
+## How to Test
 
 Use **Postman** or **curl** to send a request:
 
@@ -118,7 +118,7 @@ Use **Postman** or **curl** to send a request:
 }
 ```
 
-✅ If successful, you'll receive:
+If successful, you'll receive:
 
 ```json
 {
@@ -131,13 +131,6 @@ Use **Postman** or **curl** to send a request:
   }
 }
 ```
-
----
-
-## 🧘 Notes
-
-- The balances are simulated and reset every time the app restarts.
-- If SNS credentials are invalid or missing, the app will skip event publishing but still process the request.
 
 ---
 
